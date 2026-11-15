@@ -1,0 +1,15 @@
+function on_xml_read()
+  RegisterScriptCallback("on_xml_read", function(xml_file_name, xml_obj)
+    if xml_file_name == [[text\eng\st_mm_faction_select.xml]] then
+	  local res = xml_obj:query("string[id=st_faction_ecolog_desc] > text")
+	  if res[1] then
+	    local el = res[1]
+		local txt = xml_obj:getText(el)
+		if txt then
+		  xml_obj:setText(el, [[Sponsored by Interlandia Ministry of Science.\n 
+		  \nThey are an official Interlandia unit consisted of scientists and volunteers whose goal is to research the zone and harness its potential.]])
+		end
+	  end
+	end
+  end)
+end
