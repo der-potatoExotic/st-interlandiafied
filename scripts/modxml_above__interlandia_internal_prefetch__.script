@@ -1,0 +1,5 @@
+-- THIS FILE IS OBSOLETE AND WILL BE REMOVED --
+
+function on_xml_read()
+    prefetch("__mod_interlandiafied_internal_common__")
+end

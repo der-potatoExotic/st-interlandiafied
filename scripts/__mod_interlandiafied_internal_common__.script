@@ -1,0 +1,12 @@
+__internal__st_interlandiafied_ltx__ = ini_file("mod_script__interlandia_early.ltx")
+
+function __internal__st_interlandiafied_gets_ltx(local_ltx, str)
+    return local_ltx:r_string_ex("__internal_interlandiafied_tables__", str)
+end
+
+function __internal__st_interlandiafied_gets_ltx_n(str)
+    return __internal__st_interlandiafied_ltx__:r_string_ex("__internal_interlandiafied_tables__", str)
+end
+
+gets_ltx = __internal__st_interlandiafied_gets_ltx
+gets_ltx_n = __internal__st_interlandiafied_gets_ltx_n

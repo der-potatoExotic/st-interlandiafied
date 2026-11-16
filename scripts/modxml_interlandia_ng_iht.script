@@ -1,7 +1,8 @@
 function on_xml_read()
+  	
   RegisterScriptCallback("on_xml_read", function(xml_file_name, xml_obj)
-    if xml_file_name == [[text\eng\st_mm_faction_select.xml]] then
-	  local res = xml_obj:query("string[id=st_faction_army_desc] > text")
+    if xml_file_name == __mod_interlandiafied_internal_common__.gets_ltx_n("faction_select") then
+	  local res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("htruppen_desc") .. "] > text")
 	  if res[1] then
 	    local el = res[1]
 		local txt = xml_obj:getText(el)
@@ -10,7 +11,7 @@ function on_xml_read()
 		  \nThey are assigned to guard the zone from any intrusions including those that try to leave to the outside world and patrol inside the zone, they're known to shoot any enemies on sight.]])
 		end
 	  end
-	  res = xml_obj:query("string[id=st_faction_army] > text")
+	  res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("htruppen") .. "] > text")
       if res[1] then
         local el = res[1]
 		local txt = xml_obj:getText(el)
@@ -18,7 +19,7 @@ function on_xml_read()
 		  xml_obj:setText(el, "Heerestruppen")
 		end
       end
-      res = xml_obj:query("string[id=actor_army] > text")
+      res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("gr_a_htruppen") .."] > text")
       if res[1] then
         local el = res[1]
 		local txt = xml_obj:getText(el)
@@ -26,7 +27,7 @@ function on_xml_read()
 		  xml_obj:setText(el, "Heerestruppen")
 		end
       end
-	  res = xml_obj:query("string[id=army] > text")
+	  res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("gr_htruppen") .."] > text")
       if res[1] then
         local el = res[1]
 		local txt = xml_obj:getText(el)
