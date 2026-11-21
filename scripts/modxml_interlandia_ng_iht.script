@@ -7,7 +7,7 @@ function on_xml_read()
 	    local el = res[1]
 		local txt = xml_obj:getText(el)
 		if txt then
-		  xml_obj:setText(el, [[The Interlandian forces inside the zone, consisting of Heerestruppen and their paramilitary unit, Sicherheitseinheit.\n 
+		  xml_obj:setText(el, [[The Interlandian forces inside the zone, consisting of Sicherheitseinheit soldiers.\n 
 		  \nThey are assigned to guard the zone from any intrusions including those that try to leave to the outside world and patrol inside the zone, they're known to shoot any enemies on sight.]])
 		end
 	  end
@@ -16,7 +16,7 @@ function on_xml_read()
         local el = res[1]
 		local txt = xml_obj:getText(el)
 		if txt then
-		  xml_obj:setText(el, "Heerestruppen")
+		  xml_obj:setText(el, "Sicherheitseinheit")
 		end
       end
       res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("gr_a_htruppen") .."] > text")
@@ -24,7 +24,7 @@ function on_xml_read()
         local el = res[1]
 		local txt = xml_obj:getText(el)
 		if txt then
-		  xml_obj:setText(el, "Heerestruppen")
+		  xml_obj:setText(el, "Sicherheitseinheit")
 		end
       end
 	  res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("gr_htruppen") .."] > text")
@@ -32,9 +32,35 @@ function on_xml_read()
         local el = res[1]
 		local txt = xml_obj:getText(el)
 		if txt then
-		  xml_obj:setText(el, "Heerestruppen")
+		  xml_obj:setText(el, "Sicherheitseinheit")
 		end
       end
+
+	elseif xml_file_name == __mod_interlandiafied_internal_common__.gets_ltx_n("dialog_manager") then
+		local res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("army_story_pda") .. "] > text")
+      	if res[1] then
+      	  	local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+			  xml_obj:setText(el, "Attention, we have recieved informations from Sicherheitseinheit. All troops must report back to HQ for their assignments.")
+			end
+      	end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("kuz_story_start_1") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+			  xml_obj:setText(el, "Welcome to your hellhole soldier. Unless you want to be sent to the camp by the Ministry after you tried to smuggle potato peels to other troops, you'll be assigned on a tour of duty. As you know by now, everyone will try to kill you, including the traitors that have entered the area so trust no one, and shoot first before asking any questions. Your tour of duty will take you all around the zone.\n \nThe contacts have been sent to your PDA and it is you duty to meet them. Make no mistakes and Interlandia will be happy. Glory to Erdmann, you are dismissed.")
+			end
+		end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("kuz_story_end") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+			  xml_obj:setText(el, "I see you have made it in one piece, soldier. But you have been expecting to be removed and sent back to Sibiristadt, haven't you?\n \nUnfortunately, your duty has proven very useful for Interlandia and Sicherheitseinheit. Thus, you are now assigned permanently to the zone until further notice. Enjoy your stay here, soldier. Glory to Interlandia and get your face out of my view.")
+			end
+		end
 	end
   end)
 end

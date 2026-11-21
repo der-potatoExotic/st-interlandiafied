@@ -1,9 +1,7 @@
-local __internal__st_interlandiafied__  = ini_file("mod_script__interlandia_early.ltx")
-
 function on_xml_read()
   RegisterScriptCallback("on_xml_read", function(xml_file_name, xml_obj)
-    if xml_file_name == __mod_interlandiafied_internal_common__.__internal__st_interlandiafied_gets_ltx(__internal__st_interlandiafied__, "faction_select") then
-      local res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.__internal__st_interlandiafied_gets_ltx(__internal__st_interlandiafied__, "ecolog_desc") .. "] > text")
+    if xml_file_name == __mod_interlandiafied_internal_common__.gets_ltx_n("faction_select") then
+      local res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("ecolog_desc") .. "] > text")
       if res[1] then
         local el = res[1]
         local txt = xml_obj:getText(el)
