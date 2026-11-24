@@ -1,3 +1,6 @@
+-- INTERNAL FUNCTION HELPERS GO HERE.
+
+-- CORE VARIABLE. DO NOT TOUCH.
 local __internal__st_interlandiafied_ltx__ = ini_file("mod_script__interlandia_early.ltx")
 
 -- -- OBSOLETE --
@@ -8,6 +11,9 @@ end
 function __internal__st_interlandiafied_gets_ltx_n(str)
     return __internal__st_interlandiafied_ltx__:r_string_ex("__internal_interlandiafied_tables__", str)
 end
+
+
+-- ALIASES GO HERE.
 
 -- -- OBSOLETE --
 gets_ltx = __internal__st_interlandiafied_gets_ltx

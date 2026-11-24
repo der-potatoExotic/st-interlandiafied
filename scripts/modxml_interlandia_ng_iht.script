@@ -61,6 +61,33 @@ function on_xml_read()
 			  xml_obj:setText(el, "I see you have made it in one piece, soldier. But you have been expecting to be removed and sent back to Sibiristadt, haven't you?\n \nUnfortunately, your duty has proven very useful for Interlandia and Sicherheitseinheit. Thus, you are now assigned permanently to the zone until further notice. Enjoy your stay here, soldier. Glory to Interlandia and get your face out of my view.")
 			end
 		end
+
+	elseif xml_file_name == __mod_interlandiafied_internal_common__.gets_ltx_n("ency_factions") then
+		local res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("ency_shsh") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+			  xml_obj:setText(el, "Sicherheitseinheit")
+			end
+		end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("ency_shsh_desc") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+			  xml_obj:setText(el, [[%c[pda_white]The so-called "Truppen"%c[ui_gray_1] are part of Interlandia's Sicherheitseinheit, mandated by the Ministry of Internal Affairs.\n
+			  \n%c[pda_green]Information%c[ui_gray_1]\n
+			  \nPrimarily to cordon off the zone from anyone entering or leaving, they are widely "liked" by everyone with the exception of Ecologists and Duty, the former being from the same government, and the latter [REDACTED].\n
+			  \nOfficially, trespassers and traitors are to be apprehended and [REDACTED]. In practice, however, soldiers open fire when on sight and taught to regard them as enemy of Interlandia.\n
+			  \nMoreover, their officers can be negotiated. One example is how they ignore Rookie village despite being a few hundred meters away from the checkpoint.\n
+			  \n%c[pda_blue]Statistics%c[ui_gray_1]
+			  \n- De Facto Commanding Officer: Colonel Kuznetsov
+			  \n- Field Headquarters: Agroprom
+			  \n- Colors: Green and olive
+			]])
+			end
+		end
 	end
   end)
 end
