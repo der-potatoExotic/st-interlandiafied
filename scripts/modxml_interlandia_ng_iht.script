@@ -50,7 +50,7 @@ function on_xml_read()
 			local el = res[1]
 			local txt = xml_obj:getText(el)
 			if txt then
-			  xml_obj:setText(el, "Welcome to your hellhole soldier. Unless you want to be sent to the camp by the Ministry after you tried to smuggle potato peels to other troops, you'll be assigned on a tour of duty. As you know by now, everyone will try to kill you, including the traitors that have entered the area so trust no one, and shoot first before asking any questions. Your tour of duty will take you all around the zone.\n \nThe contacts have been sent to your PDA and it is you duty to meet them. Make no mistakes and Interlandia will be happy. Glory to Erdmann, you are dismissed.")
+			  xml_obj:setText(el, "Welcome to your hellhole soldier. Unless you want to be sent to the camp by the Ministry after you tried to smuggle potato peels to other troops, you'll be assigned on a tour of duty. As you know by now, everyone will try to kill you, including the traitors that have entered the area so trust no one, and shoot first before asking any questions. Your tour of duty will take you all around the zone.\n \nThe contacts have been sent to your PDA and it is your duty to meet them. Make no mistakes and Interlandia will be happy. Glory to Erdmann, you are dismissed.")
 			end
 		end
 		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("kuz_story_end") .. "] > text")
@@ -86,6 +86,92 @@ function on_xml_read()
 			  \n- Field Headquarters: Agroprom
 			  \n- Colors: Green and olive
 			]])
+			end
+		end
+
+	elseif xml_file_name == __mod_interlandiafied_internal_common__.gets_ltx_n("agr_dialogs") then
+		local res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("agr_guide_shoo") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+			  xml_obj:setText(el, "Yes, I can take you to.. wait, who the hell are you even? We transport high ranking officers and experienced soldiers only but not you grunts. Get the hell out of my face.")
+			end
+		end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("rog_self_text_1") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+				xml_obj:setText(el, "I'm the medic around this base as you can see. I first arrived in the zone years ago on something. After some time, I was assigned to an operation with a group. Sadly, it went horrible and I managed to escape from the crash site and bunker down with some survivors - until an investigator from the Sicherheitseinheit came undercover and helped for the evacuation,\n \nI'm glad to be gone from that hell, strange things always happen on that city, including those fanatics stalkers and how I woke up inside a working fridge. The other men teased me about it.")
+			end
+		end
+
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("rog_self_text_3") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+				xml_obj:setText(el, "I did and went home, but they had other plans as I was sent back to the zone due to bad feelings and having something special working with soldiers. ALthough I could not blame for all of their faults due to the staff- eh, nevermind.\n \nAs I was saying, the leader here is not the way of my old commander, former Colonel Kovalsky. But I would be happier if Colonel Degtyarev took a more active leadership here, but I suppose it's enough to know that he's somewhere, kicking someone or shooting something.")
+			end
+		end
+
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("rog_greet") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+				xml_obj:setText(el, "Huh? What do you need now?")
+			end
+		end
+
+	elseif xml_file_name == __mod_interlandiafied_internal_common__.gets_ltx_n("st_agr_quests") then
+		local res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("agr_kuz_join_shsh_text") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+			  xml_obj:setText(el, "Ah, it's good to see anyone joining to defend from the enemy of the state! Let's see.. well, you are too irradiated to be sent to cities, maybe you're expecting this branch of Sicherheitseinheit? We don't just let anyone in as a precaution for traitors.\n \nBring me 8.000 IM and we can talk about intergrating you.")
+			end
+		end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("agr_kuz_join_shsh_name") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+				xml_obj:setText(el, "Joining the state unit")
+			end
+		end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("agr_kuz_secret_service") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+				xml_obj:setText(el, "Extracting an Interlandian agent")
+			end
+		end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("agr_kuz_justice_text") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+				xml_obj:setText(el, "The intelligence report keeps me updated on who's the enemy of the state. Some of them are foreign spies or technicians. Others are.. traitors that left the unit. Others are what you have expected, criminal scums to escape justice. The exact crime doesn't matter, what matters if you are willing to clean the target out of Interlandia. So, what is it?")
+			end
+		end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("agr_kuz_join_shsh_short_text") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+				xml_obj:setText(el, "Colonel Kuznetsov has asked me to bring him 8,000 IM as a demonstration of my loyalty.")
+			end
+		end
+		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("agr_kir_basic_tools_text") .. "] > text")
+		if res[1] then
+			local el = res[1]
+			local txt = xml_obj:getText(el)
+			if txt then
+				xml_obj:setText(el, "Recently, our tools was requisitioned for their current front, and we need replacements. While we've been waiting for the next batch of convoy, Kuznetsov is getting impatient. So while he holds their feet to the fire, I am willing to reward anyone to bring any basic tools while out on patrol. So, are you willing to keep an eye out for basic tools?")
 			end
 		end
 	end
