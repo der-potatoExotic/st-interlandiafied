@@ -112,7 +112,7 @@ function on_xml_read()
 			local el = res[1]
 			local txt = xml_obj:getText(el)
 			if txt then
-				xml_obj:setText(el, "I did and went home, but they had other plans as I was sent back to the zone due to bad feelings and having something special working with soldiers. ALthough I could not blame for all of their faults due to the staff- eh, nevermind.\n \nAs I was saying, the leader here is not the way of my old commander, former Colonel Kovalsky. But I would be happier if Colonel Degtyarev took a more active leadership here, but I suppose it's enough to know that he's somewhere, kicking someone or shooting something.")
+				xml_obj:setText(el, "I did and went home, but they had other plans as I was sent back to the zone due to bad feelings and having something special working with soldiers. Although I could not blame for all of their faults due to the staff- eh, nevermind.\n \nAs I was saying, the leader here is not the way of my old commander, former Colonel Kovalsky. But I would be happier if Colonel Degtyarev took a more active leadership here, but I suppose it's enough to know that he's somewhere, kicking someone or shooting something.")
 			end
 		end
 
