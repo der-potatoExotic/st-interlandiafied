@@ -131,7 +131,7 @@ function on_xml_read()
 			local el = res[1]
 			local txt = xml_obj:getText(el)
 			if txt then
-			  xml_obj:setText(el, "Ah, it's good to see anyone joining to defend from the enemy of the state! Let's see.. well, you are too irradiated to be sent to cities, maybe you're expecting this branch of Sicherheitseinheit? We don't just let anyone in as a precaution for traitors.\n \nBring me 8.000 IM and we can talk about intergrating you.")
+			  xml_obj:setText(el, "Ah, it's good to see anyone joining to defend from the enemy of the state! Let's see.. well, you are too irradiated to be sent to any cities, maybe you're expecting this branch of Sicherheitseinheit? We don't just let anyone in as a precaution for enemies.\n \nBring me 8.000 IM and we can talk about intergrating you.")
 			end
 		end
 		res = xml_obj:query("string[id=" .. __mod_interlandiafied_internal_common__.gets_ltx_n("agr_kuz_join_shsh_name") .. "] > text")
@@ -171,7 +171,7 @@ function on_xml_read()
 			local el = res[1]
 			local txt = xml_obj:getText(el)
 			if txt then
-				xml_obj:setText(el, "Recently, our tools was requisitioned for their current front, and we need replacements. While we've been waiting for the next batch of convoy, Kuznetsov is getting impatient. So while he holds their feet to the fire, I am willing to reward anyone to bring any basic tools while out on patrol. So, are you willing to keep an eye out for basic tools?")
+				xml_obj:setText(el, "Recently, our tools was requisitioned for the eastern front, and we need replacements. While we've been waiting for the next batch of convoy, Kuznetsov is getting impatient. So while he holds their feet to the fire, I am willing to reward anyone to bring any basic tools while out on patrol. So, are you willing to keep an eye out for basic tools?")
 			end
 		end
 	end
